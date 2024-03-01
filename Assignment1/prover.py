@@ -65,7 +65,7 @@ def gen_merkle_proof(leaves, pos):
         #######     function hash_internal_node(left,right)       ######
 
         # If level_pos is odd, the left node needs to be added in the path. 
-        # Otherwise, add the right node.
+        # Otherwise, add the right node in the path list.
         path.append(state[level_pos + (-1) ** (level_pos % 2)]) 
         # update level_pos to the next level
         level_pos //= 2
