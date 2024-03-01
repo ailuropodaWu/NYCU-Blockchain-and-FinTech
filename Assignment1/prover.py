@@ -63,8 +63,14 @@ def gen_merkle_proof(leaves, pos):
         #######  YOUR CODE GOES HERE                              ######
         #######     to hash internal nodes in the tree use the    ######
         #######     function hash_internal_node(left,right)       ######
+
+        # If level_pos is odd, the left node needs to be added in the path. 
+        # Otherwise, add the right node.
         path.append(state[level_pos + (-1) ** (level_pos % 2)]) 
+        # update level_pos to the next level
         level_pos //= 2
+
+        # update state of next level
         len_state = len(state) // 2
         for i in range(len_state):
             state[i] = hash_internal_node(state[2 * i], state[2 * i + 1])
