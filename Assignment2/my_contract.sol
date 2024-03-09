@@ -29,7 +29,8 @@ contract ChuanYuWu is ERC20, ERC20Permit {
     //     require(!_blacklist[from] && !_blacklist[to]);
     // }
 
-    function _update(address from, address to, uint256 value) internal virtual override  {
+    function _update(address from, address to, uint256 value) internal virtual override  { 
+        // override the function to make sure that addresses in _blacklist could not do any transfer
         require(!_blacklist[from] && !_blacklist[to]);
         super._update(from, to, value);
     }
