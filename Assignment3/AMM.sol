@@ -18,6 +18,7 @@ contract MyAMM{
         totalSupply = reserve0 + reserve1 * 10000 / conversionRate; // record the share based on token0
     }
     function update() external {
+        // used to do the initial update after calling the mint() from the token contract
         _update();
     }
     function trade(address tokenFrom, uint256 fromAmount) external payable {

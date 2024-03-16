@@ -10,7 +10,7 @@ contract Token0 is ERC20, ERC20Permit {
         _mint(msg.sender, 10000000 * 10 ** decimals());
     }
     function mint(address target, uint256 amount) external { 
-        // use to give the initial assset(2000 tokens) to amm
+        // used to give the initial assset(2000 tokens) to amm
         _mint(target, amount);
     }
 }
@@ -20,7 +20,7 @@ contract Token1 is ERC20, ERC20Permit {
         _mint(msg.sender, 10000000 * 10 ** decimals());
     }
     function mint(address target, uint256 amount) external { 
-        // use to give the initial assset(3000 tokens) to amm
+        // used to give the initial assset(3000 tokens) to amm
         _mint(target, amount);
     }
 }
